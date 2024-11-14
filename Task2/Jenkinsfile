@@ -1,13 +1,12 @@
 pipeline {
-    environment {
-        MYSQL_ROOT_PASSWORD=CREDENTIALS("MYSQL_ROOT_PASSWORD")
-    }
     agent any
-    stages{
-        stage("Run Script") {
-            dir("Task2") {
-                sh "sh deploy.sh"
+    stages {
+        stage {
+            steps {
+                dir("Task2") {
+                    sh "sh deploy.sh"
+                }
             }
-        }		
+        }
     }
 }
