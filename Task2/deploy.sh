@@ -1,6 +1,6 @@
 #!/bin/bash
 # remove running containers
-docker rm -f $(docker ps -qa)
+docker rm -f $(docker ps -qa) || sleep 1
 # create a network
 docker network create trio-task-network || sleep 1
 #create a volume

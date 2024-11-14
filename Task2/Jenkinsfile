@@ -4,7 +4,7 @@ pipeline {
         stage {
             steps {
                 dir("Task2") {
-                    sh "sh deploy.sh"
+                    sh "deploy.sh"
                 }
             }
         }
