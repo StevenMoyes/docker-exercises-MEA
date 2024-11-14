@@ -2,9 +2,9 @@
 # remove running containers
 docker rm -f $(docker ps -qa)
 # create a network
-docker network create trio-task-network
+docker network create trio-task-network || sleep 1
 #create a volume
-docker volume create new-volume
+docker volume create new-volume || sleep 1
 # build flask and mysql
 docker build -t trio-task-mysql:5.7 db
 docker build -t trio-task-flask-app:latest flask-app
@@ -28,4 +28,5 @@ docker run -d \
     --mount type=bind,source=$(pwd)/nginx/nginx.conf,target=/etc/nginx/nginx.conf \
     nginx:latest
 # show running containers
+sleep 2
 docker ps -a

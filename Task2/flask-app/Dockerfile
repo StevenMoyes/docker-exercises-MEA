@@ -4,7 +4,7 @@ FROM python:3.7
 COPY requirements.txt . 
 # install pip dependencies from requirements file 
 RUN pip install -r requirements.txt
-copy . . 
+COPY . . 
 # Expose correct port 
 EXPOSE 5000 
 # Create an entrypoint 
