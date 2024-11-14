@@ -4,8 +4,8 @@ pipeline {
     }
     agent any
     stages{
-        stage"Run Script") {
-            dir("Task2) {
+        stage("Run Script") {
+            dir("Task2") {
                 sh "sh deploy.sh"
             }
         }		
